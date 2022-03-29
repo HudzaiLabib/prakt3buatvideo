@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prakt3video/detail_screen.dart';
+import 'package:prakt3video/model/tourism_place.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -10,12 +11,19 @@ class MainScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Wisata Surabaya'),
       ),
-      body: InkWell(
-        onTap: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context){
-            return DetailScreen();
-          }));
+      body: ListView.builder(
+        itemBuilder: (context,index){
+        final TourismPlace place = tourismPlaceList[index];
+        return InkWell(
+          onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return DetailScreen(place: place);
+            }));
+          },
+          child: listItem(place),
+        );
         },
+        itemCount: tourismPlaceList.length,
       ),
     );
   }
