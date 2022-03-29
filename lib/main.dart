@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prakt3video/detail_screen.dart';
+import 'package:prakt3video/main_screen.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Contacts',
       theme: ThemeData(),
-      home: const DetailScreen(),
+      home: const MainScreen(),
     );
   }
 }

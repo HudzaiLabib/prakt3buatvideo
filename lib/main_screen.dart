@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prakt3video/detail_screen.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -9,7 +10,13 @@ class MainScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Wisata Surabaya'),
       ),
-      body: listItem(),
+      body: InkWell(
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context){
+            return DetailScreen();
+          }));
+        },
+      ),
     );
   }
 

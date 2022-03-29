@@ -6,8 +6,7 @@ class DetailScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Column(
+      body: ListView(
           children: <Widget> [
             Image.asset('assets/images/submarine.jpg'),
             Container(
@@ -124,7 +123,6 @@ class DetailScreen extends StatelessWidget{
             )
           ],
         ),
-      ),
     );
   }
 }
